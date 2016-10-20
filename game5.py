@@ -1,6 +1,10 @@
 import random
+# ========== Global variables ==========
+
 ZeroStage = [[0,0,0,0], [0,0,0,0], [0,0,0,0], [0,0,0,0]]
 Stage=[[0,0,0,0], [0,0,0,0], [0,0,0,0], [0,0,0,0]]
+
+# ========== Functions ==========
 
 def ZeroStagef():
     global Stage
@@ -33,7 +37,6 @@ def PlayGround(Stage):
     print (Stage[2][0], "\t", Stage[2][1], "\t", Stage[2][2], "\t", Stage[2][3])
     print (Stage[3][0], "\t", Stage[3][1], "\t", Stage[3][2], "\t", Stage[3][3])
 
-
 def Newelement(function):
     #csak, ahol 0 van, amikor új Stage lesz
     global Stage
@@ -61,7 +64,6 @@ def move_up():
                     Stage[i-3][j]=Stage[i][j] 
                     Stage[i][j]=0
 
-
 def move_down():
     global Stage
     for i in range(4):
@@ -78,7 +80,7 @@ def move_down():
                     Stage[i][j]=0
                 if i==3:
                     Stage[i][j]=Stage[i][j]
- 
+
 def move_right():
     global Stage
     for i in range(4):
@@ -88,15 +90,14 @@ def move_right():
                     Stage[i][j+3]=Stage[i][j]
                     Stage[i][j]=0
                 if j==1:
-                    Stage[i][j+2]=Stage[i][j]  
+                    Stage[i][j+2]=Stage[i][j]
                     Stage[i][j]=0
                 if j==2:
-                    Stage[i][j+1]=Stage[i][j] 
+                    Stage[i][j+1]=Stage[i][j]
                     Stage[i][j]=0
                 if j==3:
-                    Stage[i][j]=Stage[i][j] 
-            
-                    
+                    Stage[i][j]=Stage[i][j]
+
 def move_left():
     global Stage
     for i in range(4):
@@ -105,13 +106,13 @@ def move_left():
                 if j==0:
                     Stage[i][j]=Stage[i][j]
                 if j==1:
-                    Stage[i][j-1]=Stage[i][j]  
+                    Stage[i][j-1]=Stage[i][j]
                     Stage[i][j]=0
                 if j==2:
-                    Stage[i][j-2]=Stage[i][j] 
+                    Stage[i][j-2]=Stage[i][j]
                     Stage[i][j]=0
                 if j==3:
-                    Stage[i][j-3]=Stage[i][j] 
+                    Stage[i][j-3]=Stage[i][j]
                     Stage[i][j]=0
 #???????????????
 def fusion_up():
@@ -122,7 +123,6 @@ def fusion_up():
             for k in range(4):
                 if ZeroStage[i][j] != 1 and Stage[i][j]==Stage[k][j] and k!=i:
                     Stage[i][j]=Stage[i][j]*2
-
 
 def key_press():
     # direction=input("Direction: ")
@@ -148,30 +148,11 @@ def key_press():
             Newelement(ZeroStagef())
         else:
             quit()
-        
-        
 
-
-
+# ========== Main ==========
 Startposition()
-#while Stage[i][j]==2048 is False:
 ZeroStagef()
-# print(ZeroStage)
 PlayGround(Stage)
-# print(ZeroStage)
 key_press()
-# print(ZeroStage)
-# print(Stage)
-# PlayGround(Stage)
-# print(ZeroStage)
-# key_press()
-# Newelement(ZeroStagef())  
-#else: print(You win!)
-# PlayGround(Stage)
-
-
-
 
 # list 0 elements, random, tuple
-
-

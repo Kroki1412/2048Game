@@ -201,20 +201,6 @@ def down_loose():
             quit()
             break
 
-# def loose():
-#     global Elements
-#     Loose = 0
-#     for i in range(len(Elements)):
-#         if Elements[i] == 0:
-#             Loose = 0
-#             break
-#         else:
-#             Loose = 1
-
-#     if Loose == 1:
-#         print("You lost the game!")
-#         quit()
-
 def new_element():
     global Elements
     NewIndex = random.randint(0, 24)
